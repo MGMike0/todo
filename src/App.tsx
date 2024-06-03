@@ -1,25 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { TodoProvider } from "./context/todo";
+import { TodoList } from "./components/TodoList";
+import { NewTodo } from "./components/NewTodo";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <TodoProvider>
+      <div className="d-flex justify-content-center">
+        <div
+          className="p-5 d-flex flex-column"
+          style={{ maxWidth: "1150px", width: "80%" }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <h1>TODO APP </h1>
+          <NewTodo />
+          <TodoList />
+        </div>
+      </div>
+    </TodoProvider>
   );
 }
 
